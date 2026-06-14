@@ -3,7 +3,7 @@
  * Centralized API calls with JWT auth, logout support, and error handling.
  */
 
-const API_BASE_URL = 'https://backend-ltb3.onrender.com/api' || 'http://localhost:5000/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 // ─── Token / User storage ──────────────────────────────────────────────────────
 const getAuthToken   = () => { try { return JSON.parse(localStorage.getItem('authToken')); } catch { return null; } };
